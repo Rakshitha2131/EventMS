@@ -1,0 +1,63 @@
+{% extends 'htmlfiles/base.html' %}
+{% load static %}
+{% block title %}Welcome{% endblock %}
+{% block content %}
+<head>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Oswald:wght@600&display=swap');
+        .division1
+        {
+            background-color: #caf0f8;
+            margin-left: 7%;
+            margin-top: 5%;
+            margin-right: 7%;
+            height :70vh; 
+        }
+        .image 
+        {
+            margin-top: 40px;
+            margin-left:20%;
+            height:350px;
+            width: 350px;
+        }
+        h1,h2
+        {
+            margin-top:40px;
+            margin-left:80px;
+            font-family: 'Oswald', sans-serif;
+        }
+        .butt 
+        {
+            padding: 5px;
+            border-radius: 5px;
+            margin-left: 40%;
+            background-color: #ff758f;
+            font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+            border-width: 5px;
+            font-size: 20px;
+        }
+        .link1
+            {
+                color:white;
+                text-decoration: none;
+                outline: none;
+            }
+    </style>
+</head>
+<div class = "container">
+    <div class = "division1">
+        <div class = "row">
+            <div class = "col">
+                <h1>Vignan's Institute Of Engineering For Women</h1>
+                <h1 style = "color:#3c096c;">Welcome Geeks!!</h1>
+                <h2>Know more about events of VIEW</h2>
+                <button class ="butt"><a class = "link1" href="{% url 'evtli' %} ">Explore Events</a></button>
+            </div>
+            <div class = "col">
+                <img class = "image" src = "{% static 'images/CEM.jpg' %}">
+            </div>
+        </div>
+    </div>
+</div>
+
+{% endblock %}

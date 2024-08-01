@@ -1,0 +1,70 @@
+{% extends 'htmlfiles/base.html' %}
+{% block title %}Login Page{% endblock %}
+{% block content %}
+<head>
+    <style>
+        .overlay-card {
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      width : 500px;
+      border-color: lightcoral;
+      border-radius: 15px;
+      border-style: double;
+       /* Adjust the width as needed */
+    }
+    h3
+    {
+        font-family: 'Times New Roman', Times, serif;
+    }
+    .form-control
+    {
+        font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+    }
+    .toast
+    {
+        position: absolute;
+      top: 50%;
+      left: 70%;
+      transform: translate(-50%, -50%);
+    }
+    </style>
+</head>
+<div class = "container">
+    <div class = "card overlay-card mx-auto shadow-lg">
+        <div class = "card-body">
+            <center><h3>Login</h3></center>
+            <form method = "post">
+                {% csrf_token %}
+                <input type = "text" name = "username" placeholder = "Enter UserID" class = "form-control my-2">
+                <input type = "password" name = "password" placeholder = "Enter your password" class = "form-control my-2">
+
+                <div class = "row">
+                    <div class = "col">
+                        <a href = "{% url 'reg'  %}" class = "btn btn-outline-warning form-control">New User??</a>
+                    </div>
+                    <div class = "col">
+                        <input type = "submit" value = "Login" class = "btn btn-outline-success form-control">
+                    </div>
+                </div>
+            </form>
+        </div>
+    </div>
+    {% if messages %}
+    {% for i in messages %}
+    <div class="toast col-sm-6 " data-delay = "5000" data-autohide="true">
+        <div class="toast-header">
+          <strong class="mr-auto text-{{i.tags}}">{{i.tags}}</strong>
+          <small class="text-muted">5 mins ago</small>
+          <button type="button" class="ml-2 mb-1 close" data-dismiss="toast">&times;</button>
+        </div>
+        <div class="toast-body">
+          {{i}}
+        </div>
+      </div>
+        
+        {% endfor %}
+    {% endif %} 
+</div>
+{% endblock %}

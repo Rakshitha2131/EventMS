@@ -1,0 +1,47 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <title>{% block title %}{% endblock %}</title>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="{% static 'css/bootstrap.min.css' %}">
+  <link rel = "icon" type = "text/css" href = "{% static 'images/Final_logo.jpg' %}">
+  <script type = "text/javascript" src = "{% static 'jquery/demo.js' %}"></script>
+  <script src="{% static 'js/bootstrap.min.js' %}"></script>
+  <style>
+    .navbar-nav
+    {
+        margin-left: 370px;
+        font-family:'Times New Roman', Times, serif;
+        font-size: 20px;
+    }
+    .navbar 
+    {
+        background-color: #f72585;
+        
+    }
+    .nav-link
+    {
+        color:aliceblue;
+    }
+    .navbar-brand
+    {
+        margin-left: 10px;
+        font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+        color:white;
+    }
+    .btn-dropdown-toggle
+    {
+        background-color: #ffc8dd;
+        padding:5px;
+        border-radius: 5px;
+    }
+  </style>
+</head>
+<body>
+    {% include 'htmlfiles/navbar.html' %}
+    {% block content %}
+    {% endblock %}
+</body>
+</html>

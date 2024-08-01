@@ -1,0 +1,22 @@
+{% extends 'htmlfiles/base.html' %}
+{% block title %}EventList{% endblock %}
+{% load static %}
+{% block content %}
+    <head>
+        <style>
+            .img{
+                margin-left: 30%;
+                border-radius: 20px;
+            }
+        </style>
+    </head>
+    <body>
+        <div class = "container">
+            <div class = "row row-cols-1 row-cols-md-3 pt-5">
+                <div class = "col">
+                    <img class = "img" src = "{% static 'images/ofcB.png' %}">
+                </div>
+            </div>
+        </div>
+    </body>
+{% endblock %}

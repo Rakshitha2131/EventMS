@@ -1,0 +1,96 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="{% static 'css/bootstrap.min.css' %}">
+    <link rel = "icon" type = "text/css" href = "{% static 'images/Final_logo.jpg' %}">
+    <script type = "text/javascript" src = "{% static 'jquery/demo.js' %}"></script>
+    <script src="{% static 'js/bootstrap.min.js' %}"></script>
+    <title>Document</title>
+    <style>
+        body{
+            background: linear-gradient(90deg, #c2cefe 0%, #f7a3fe 100%);
+            overflow-x: hidden;
+        }
+        
+        .image
+        {
+            margin-top: 30px;
+            width : 400px;
+            height : 600px;
+            border: 10px solid;
+            border-color: #7209b7;
+            border-radius: 10px;
+        }
+        .image2
+        {
+            margin-top: 50px;
+            margin-left: 20%;
+            width : 400px;
+            height : 600px;
+            border: 10px solid;
+            border-color: #78290f;
+            border-radius: 10px;
+        }
+        .para
+        {
+            font-family:'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+            margin-top : 150px;
+            font-size: 25px;
+            color: #3a0ca3;
+        }
+        .para2
+        {
+            font-family:'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+            padding : 15%;
+            font-size: 25px;
+            color: #9e0059;
+            margin
+        }
+    </style>
+</head>
+<body>
+    <div class = "container">
+        <div class = "row">
+            <div class = "col">
+                {% load static %}
+                <img src="{% static 'images/Dance image.png' %}" class = "image">
+            </div>
+            <div class = "col">
+                <div class = "para">
+                    <h1>The IT Girls</h1>
+                    <p>The farewell party was an unforgettable night, filled with laughter, emotions, and memorable moments. Among the highlights were the girls who truly rocked the floor, leaving an indelible mark on everyone present. 
+                        Dressed to impress and full of energy, 
+                        they lit up the dance floor with their charisma and style.
+                         Their vibrant outfits and infectious smiles set the tone for a joyous celebration</p>
+                </div>
+                
+            </div>
+            
+                 
+            </div>
+        </div>
+        <div class = "row">
+            <div class = "col">
+                <div class = "para2">
+                    <h1>MEMORIES</h1>
+                    <p>As we gather to bid farewell, our hearts are filled with a mix of emotions.
+                         Among them, friendship stands out as a timeless bond that has woven us together through countless moments, laughter, and shared experiences.
+                        It's in the little things—the late-night study sessions, the spontaneous adventures, the shared secrets, and the comforting words during tough times—that our friendships have been forged.
+                         These memories, both big and small, have become the cherished chapters of our journey.</p>
+                </div>
+            </div>
+            <div class = "col">
+                
+                {% load static %}
+                <img src="{% static 'images/Grouppic.png' %}" class = "image2">
+            </div>
+            
+                 
+            </div>
+        </div>
+    </div>
+</body>
+</html>

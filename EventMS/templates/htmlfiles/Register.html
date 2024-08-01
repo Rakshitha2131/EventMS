@@ -1,0 +1,78 @@
+{% extends 'htmlfiles/base.html' %}
+{% load static %}
+{% block title %}Home{% endblock %}
+{% block content %}
+<head>
+    <style>
+        .image
+        {
+            margin:0;
+            height:100vh;
+            width : 100%;
+            position:relative;
+        }
+        .overlay-card {
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      width : 500px;
+      border-color: lightcoral;
+      border-radius: 15px;
+      border-style: double;
+       /* Adjust the width as needed */
+    }
+    h3
+    {
+        font-family: 'Times New Roman', Times, serif;
+    }
+    .form-control
+    {
+        font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+    }
+    .toast
+    {
+        position: absolute;
+      top: 50%;
+      left: 70%;
+      transform: translate(-50%, -50%);
+    }
+    </style>
+</head>
+
+<div class = "container">
+    <img class = "image" src = "{% static 'images/Reg_back.jpg' %}">
+    <div class = "card overlay-card col-md-5 mx-auto shadow-lg">
+        <div class = "card-body">
+            <center><h3>Register Here</h4></center>
+            <form method = "post" novalidate>
+                {% csrf_token %}
+                {% for i in us %}
+                    {{i}}
+                    <p class = "text-danger">{{i.errors|striptags}}</p>
+                {% endfor %}
+                <div class = "row">
+                    <div class = "col">
+                        <a href = "{% url 'lgn' %}" class = "btn btn-outline-primary form-control">Existing User??</a>
+                    </div>
+                    <div class = "col">
+                        <input type="submit" value = "Create User Name" class = "btn btn-outline-success form-control">
+                    </div>
+                </div>
+            </form>
+        </div>
+    
+    
+</div>
+</div>
+<script>
+    $(document).ready(function(){
+      $('.toast').toast('show');
+    });
+    </script>
+
+{% endblock %}
+
+
+
+

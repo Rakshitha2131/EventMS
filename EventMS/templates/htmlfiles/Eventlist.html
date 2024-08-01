@@ -1,0 +1,49 @@
+{% extends 'htmlfiles/base.html' %}
+{% block title %}EventList{% endblock %}
+{% load static %}
+{% block content %}
+    <head>
+        <style>
+            .container{
+                
+                background-color: #efcfe3;
+                width:100%;
+                height:100vh;
+                position: relative;
+            }
+            
+            table{
+                margin-top:20px;
+            }
+            
+        </style>
+    </head>
+    <body>
+        <div class = "container">
+            <div class = "card col-md-5 shadow-lg mx-auto " style="position: absolute; top: 40px; left: 0; right: 0; margin: auto;">
+                <div class = "card-body">
+                    <table class = "table stripped table-hover">
+                        <tr>
+                            <th>Sno</th>
+                            <th>Event Name</th>
+                            <th>Details</th>
+                        </tr>
+                        {% for i in em %}
+                        <tr>
+                            
+                            <td>{{forloop.counter}}</td>
+                            <td>{{i.Event_name}}</td>
+                            <td>
+                                <a  href = "{% url 'fw' %}" class = "btn btn-outline-info ">Open</a>
+                            </td>
+                            
+                        </tr>
+                        {% endfor %}
+                    </table>
+                </div>
+            </div>
+            
+            
+        </div>
+    </body>
+{% endblock %}
